@@ -71,7 +71,7 @@ class GPU(object):
 
 class GPUCollection(object):
 
-	def __init__(self, *args, *kwargs):
+	def __init__(self, *args, **kwargs):
 		self.gpus = []
 
 	def add_gpu(self, gpu):
