@@ -16,7 +16,7 @@ class AbstractEwbf(BaseMiner):
         api = Api('http://127.0.0.1:{}/getstat'.format(self.port))
         try:
             response = api.get()
-            self._data = json.dump(response)
+            self._data = response.json()
         except CryptoDwarfHttpError as e:
             print(e) # TODO: logging
 
