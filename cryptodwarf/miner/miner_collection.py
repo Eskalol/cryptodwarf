@@ -1,3 +1,4 @@
+import pprint
 
 
 class MinerCollection(object):
@@ -11,3 +12,14 @@ class MinerCollection(object):
 	def __iter__(self):
 		return iter(self.miners)
 
+	def refresh(self):
+		for miner in self:
+			miner.refresh()
+
+	@property
+	def data(self):
+		return [ x.data for x in self ]
+
+	def print(self):
+		pp = pprint.PrettyPrinter(indent=4)
+		pp.pprint(self.data)
