@@ -1,0 +1,2 @@
+class CryptoDwarfError(Exception):
+    pass

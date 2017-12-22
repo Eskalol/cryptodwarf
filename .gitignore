@@ -1,0 +1,13 @@
+*.o
+*.pyc
+*.pyo
+*.tmp
+.*.swps
+.*.swo
+*~
+.DS_Store
+*.sqlite
+*.sqlite3
+*.bak
+*.egg-info/
+.idea
