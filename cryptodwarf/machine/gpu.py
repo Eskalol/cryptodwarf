@@ -69,6 +69,24 @@ class GPU(object):
 		v = self.memory_total - self.memory_used
 		return max(v, 0)
 
+	@property
+	def power_draw(self):
+		"""
+        Returns the GPU power usage in Watts,
+        or None if the information is not available.
+        """
+		v = self.entry['power.draw']
+		return int(v) if v is not None else None
+
+	@property
+	def power_limit(self):
+		"""
+        Returns the (enforced) GPU power limit in Watts,
+        or None if the information is not available.
+        """
+		v = self.entry['enforced.power.limit']
+		return int(v) if v is not None else None
+
 class GPUCollection(object):
 
 	def __init__(self, *args, **kwargs):
@@ -92,6 +110,8 @@ class GPUCollection(object):
 		kwargs['temperature.gpu'] = gpu.temperature
 		kwargs['index'] = gpu.index
 		kwargs['name'] = gpu.name
+		kwargs['power_draw'] = gpu.power_draw
+		kwargs['power_limit'] = gpu.power_limit
 		return GPU(kwargs)
 
 	def add_amd_gpus(self):
