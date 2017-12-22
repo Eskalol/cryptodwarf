@@ -7,7 +7,7 @@ class BaseMiner(object):
 	def __init__(self, *args, **kwargs):
 		pass
 
-	def start(self, **args, **kwargs):
+	def start(self, *args, **kwargs):
 		self.started_time = datetime.now()
 
 	def refresh(self):
