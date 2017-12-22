@@ -47,17 +47,17 @@ class GpuMinerCollection(object):
         return iter(self.gpu_miners)
 
     def calculate_data(self):
-        self._total_hashrate = 0
+        self._total_speed = 0
         self._total_accepted_shares = 0
         self._total_rejected_shares = 0
         for gpu_miner in self:
-            self._total_accepted_shares += gpu_miner.speed
+            self._total_speed += gpu_miner.speed
             self._total_accepted_shares += gpu_miner.accepted_shares
             self._total_rejected_shares += gpu_miner.rejected_shares
 
     @property
     def total_speed(self):
-        return self._total_hashrate
+        return self._total_speed
 
     @property
     def total_accepted_shares(self):
