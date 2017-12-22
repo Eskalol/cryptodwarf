@@ -5,6 +5,9 @@ from cryptodwarf.machine.gpu import GPUCollection
 class CryptoDwarf(object):
 
 	def __int__(self, config_file='', verbose=False):
+		pass
+
+	def start(self):
 		while True:
 			gpus = GPUCollection()
 			gpus.refresh()
