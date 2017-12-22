@@ -41,7 +41,7 @@ class GpuMinerCollection(object):
         self.gpu_miners = []
 
     def add_gpu_miner(self, gpu_miner):
-        self.add_gpu_miner.append(gpu_miner)
+        self.gpu_miners.append(gpu_miner)
 
     def __iter__(self):
         return iter(self.gpu_miners)
