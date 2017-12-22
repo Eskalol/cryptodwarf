@@ -1,5 +1,6 @@
 import fire
 from cryptodwarf.machine.gpu import GPUCollection
+from cryptodwarf.miner.miners.ewbf import ZcashEwbf
 
 
 class CryptoDwarf(object):
@@ -12,6 +13,9 @@ class CryptoDwarf(object):
 			gpus = GPUCollection()
 			gpus.refresh()
 			gpus.print()
+			zcash = ZcashEwbf(42000)
+			zcash.refresh()
+			zcash.print()
 			input("ENTER FOR next stats")
 
 if __name__ == '__main__':

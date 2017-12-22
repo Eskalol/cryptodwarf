@@ -1,7 +1,7 @@
-import datetime
+from datetime import datetime
 
 class BaseMiner(object):
-	
+
 	MINER_NAME = ''
 
 	def __init__(self, *args, **kwargs):
@@ -10,9 +10,12 @@ class BaseMiner(object):
 	def start(self, **args, **kwargs):
 		self.started_time = datetime.now()
 
+	def refresh(self):
+		raise NotImplementedError('Implement refresh function')
+
 	@property
 	def total_hashrate(self):
-		raise NotImplementedError('Implement total_hashrate function.');
+		raise NotImplementedError('Implement total_hashrate function.')
 
 	@property
 	def hash_rate_for_each_gpu(self):
@@ -25,6 +28,10 @@ class BaseMiner(object):
 	@property
 	def pool(self):
 		return self._pool
+
+	@property
+	def coin_name(self):
+		return self._coin_name
 
 	def running_time(self):
 		return datetime.now() - self.started_time
