@@ -13,7 +13,7 @@ class AbstractEwbf(BaseMiner):
         self.port = port
 
     def refresh(self):
-        api = Api('127.0.0.1:{}/getstat'.format(self.port))
+        api = Api('http://127.0.0.1:{}/getstat'.format(self.port))
         try:
             response = api.get()
             self._data = json.dump(response)
