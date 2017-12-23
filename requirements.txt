@@ -1,6 +1,7 @@
 blessings==1.6
 certifi==2017.11.5
 chardet==3.0.4
+cx-Freeze==5.1.1
 fire==0.1.2
 gpustat==0.4.1
 idna==2.6
