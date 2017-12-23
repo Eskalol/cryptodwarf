@@ -10,6 +10,7 @@ class AbstractEwbf(BaseMiner):
     def __init__(self, port, *args, **kwargs):
         super(AbstractEwbf, self).__init__(*args, **kwargs)
         self.port = port
+        self.type = 'Nvidia'
 
     def refresh(self):
         api = Api('http://127.0.0.1:{}/getstat'.format(self.port))

@@ -23,11 +23,11 @@ class GPU(object):
 		return self.entry['name']
 
 	@property
-	def index(self):
+	def id(self):
 		"""
-        Returns the index of GPU (as in nvidia-smi).
+        Returns the index of GPU
         """
-		return self.entry['index']
+		return self.entry['id']
 
 	@property
 	def temperature(self):
@@ -108,7 +108,7 @@ class GPUCollection(object):
 		kwargs['memory.total'] = gpu.memory_total
 		kwargs['utilization.gpu'] = gpu.utilization
 		kwargs['temperature.gpu'] = gpu.temperature
-		kwargs['index'] = gpu.index
+		kwargs['id'] = gpu.index
 		kwargs['name'] = gpu.name
 		kwargs['power_draw'] = gpu.power_draw
 		kwargs['power_limit'] = gpu.power_limit

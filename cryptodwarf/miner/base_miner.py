@@ -13,6 +13,14 @@ class BaseMiner(object):
         raise NotImplementedError('Implement refresh function')
 
     @property
+    def data(self):
+        raise NotImplementedError('Implement class property data')
+
+    @property
+    def type(self):
+        return self._type
+
+    @property
     def miner_name(self):
         return self.MINER_NAME
 
@@ -22,13 +30,6 @@ class BaseMiner(object):
 
     def running_time(self):
         return datetime.now() - self.started_time
-
-    def populate_gpu_miner(self):
-        raise NotImplementedError('Implement populate_gpu_miner function')
-
-    @property
-    def data(self):
-        raise NotImplementedError('Implement class property data')
 
     def print(self):
         pp = pprint.PrettyPrinter(indent=4)
