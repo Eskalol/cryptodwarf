@@ -36,7 +36,7 @@ class AbstractEwbf(BaseMiner):
     def data(self):
         data = {
             'type': self.type,
-            'coin': self._coin_name,
+            'coin': self._coin_full_name,
             'miner': self.MINER_NAME
         }
         return {**data, **self.gpu_miner_collection.data}
@@ -46,4 +46,5 @@ class ZcashEwbf(AbstractEwbf):
 
     def __init__(self, *args, **kwargs):
         super(ZcashEwbf, self).__init__(*args, **kwargs)
-        self._coin_name = 'Zcash (ZEC)'
+        self._coin_name = 'ZEC'
+        self._coin_full_name = 'Zcash (ZEC)'
